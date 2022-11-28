@@ -1,0 +1,14 @@
+target/
+history/
+bin/
+build
+out
+.gradle
+release.properties
+buildNumber.properties
+.idea
+*.iml
+.DS_Store
+._*
+
+!/.mvn/wrapper/maven-wrapper.jar

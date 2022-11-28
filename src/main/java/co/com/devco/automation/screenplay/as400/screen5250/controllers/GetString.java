@@ -16,7 +16,7 @@ public class GetString {
         try {
             text = OpenSession.getClientScreen5250().getScreenText().substring(((81 * row) + column), ((81 * row) + column) + lengtText);
         } catch (StringIndexOutOfBoundsException e) {
-            throw new IllegalArgumentException("valor de fila o columna invalido");
+            throw new IllegalArgumentException("invalid row or column value");
         }
 
         return text;

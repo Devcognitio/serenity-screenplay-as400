@@ -34,7 +34,7 @@ jobs:
       run: chmod +x gradlew
       
     - name: Compile with Gradle
-      run: ./gradlew compileJava
+      run: ./gradlew compileJava --stacktrace
     
     - name: Unit Test Gradle  
       run: ./gradlew test jacocoTestReport

@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'jacoco'
+    id "org.sonarqube" version "3.4.0.2513"
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+group 'co.com.devco.automation.screenplay.as400'
+version '1.0.0'
+
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-cucumber:1.9.45"
+    implementation "net.serenity-bdd:serenity-screenplay:2.0.81"
+    implementation "us.abstracta:xtn5250:2.2"
+    implementation 'com.blazemeter:dm3270-lib:0.14-lib'
+    implementation "jline:jline:2.11"
+    implementation "org.apache.jmeter:ApacheJMeter_core:5.4.3"
+    implementation 'org.assertj:assertj-core:3.10.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'
+    testImplementation 'org.mockito:mockito-inline:4.6.1'
+}
+
+jacoco {
+    toolVersion = "0.8.8"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+
+test {
+    environment("testDir","test")
+    jacoco {
+        append = false
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpDir = file("$buildDir/jacoco/classpathdumps")
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey","Devcognitio_DevcoLibraryAs400"
+        property "sonar.issuesReport.html.enable","true"
+        property "sonar.issuesReport.console.enable","true"
+        property "sonar.java.coveragePlugin","jacoco"
+        property "sonar.jacoco.reportPath","build/jacoco/*.exec"
+        property "sonar.dynamicAnalysis","reuseReports"
+        property "sonar.coverage.exclusions","**/interactions/*,**/targets/*,**/exceptions/*,**/questions/*,**/utils/SSLContextFactory*"
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+gradle.startParameter.continueOnFailure = true
+
+

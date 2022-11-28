@@ -5,7 +5,7 @@ plugins {
     id "org.sonarqube" version "3.4.0.2513"
     id 'jacoco'
     id 'signing'
-    id "io.github.gradle-nexus.publish-plugin"  version "1.0.0"
+    id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
 }
 
 repositories {
@@ -26,7 +26,6 @@ dependencies {
     implementation "us.abstracta:xtn5250:2.2"
     implementation 'com.blazemeter:dm3270-lib:0.14-lib'
     implementation "jline:jline:2.11"
-    implementation "org.apache.jmeter:ApacheJMeter_core:5.4.3"
     implementation 'org.assertj:assertj-core:3.10.0'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'
@@ -48,7 +47,6 @@ jacocoTestReport {
 test {
     environment("testDir","test")
     jacoco {
-        append = false
         destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
         classDumpDir = file("$buildDir/jacoco/classpathdumps")
     }

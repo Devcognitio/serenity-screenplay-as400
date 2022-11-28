@@ -3,6 +3,7 @@ plugins {
     id 'java-library'
     id 'jacoco'
     id "org.sonarqube" version "3.4.0.2513"
+    id "io.github.gradle-nexus.publish-plugin"  version "1.0.0"
 }
 
 repositories {
@@ -10,7 +11,7 @@ repositories {
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
-group 'co.com.devco.automation.screenplay.as400'
+group 'co.com.devco'
 version '1.0.0'
 
 
@@ -62,9 +63,74 @@ sonarqube {
     }
 }
 
+signing {
+    sign publishing.publications
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            pom {
+                name = 'serenity-screenplay-as400'
+                packaging = 'jar'
+                description = 'Serenity BDD + Screenplay methods to interact to AS400 Systems'
+                url = 'https://github.com/Devcognitio/serenity-screenplay-as400'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'devco'
+                        name = 'Devco'
+                        email = 'contacto@devco.com.co'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/Devcognitio/serenity-screenplay-as400'
+                    developerConnection = 'scm:git:ssh://github.com/Devcognitio/serenity-screenplay-as400.git'
+                    url = 'https://github.com/Devcognitio/serenity-screenplay-as400'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
+            }
+        }
+    }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            username = System.getenv("MAVEN_USERNAME")
+            password = System.getenv("MAVEN_PASSWORD")
+        }
+    }
+
+    clientTimeout = Duration.ofSeconds(300)
+    connectTimeout = Duration.ofSeconds(60)
+
+    transitionCheckOptions {
+        maxRetries.set(40)
+        delayBetween.set(java.time.Duration.ofMillis(3000))
+    }
+}
+
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
-
-gradle.startParameter.continueOnFailure = true
-
 

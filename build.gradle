@@ -2,9 +2,9 @@ plugins {
     id 'java'
     id 'java-library'
     id 'maven-publish'
+    id "org.sonarqube" version "3.4.0.2513"
     id 'jacoco'
     id 'signing'
-    id "org.sonarqube" version "3.4.0.2513"
     id "io.github.gradle-nexus.publish-plugin"  version "1.0.0"
 }
 
@@ -16,6 +16,9 @@ sourceCompatibility = JavaVersion.VERSION_11
 group 'co.com.devco'
 version '1.0.0'
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 dependencies {
     implementation "net.serenity-bdd:serenity-cucumber:1.9.45"
@@ -65,13 +68,13 @@ sonarqube {
     }
 }
 
-signing {
-    sign publishing.publications
-}
-
 java {
     withJavadocJar()
     withSourcesJar()
+}
+
+signing {
+    sign publishing.publications
 }
 
 publishing {
@@ -132,7 +135,4 @@ nexusPublishing {
         delayBetween.set(java.time.Duration.ofMillis(3000))
     }
 }
-
-compileJava.options.encoding = 'UTF-8'
-compileTestJava.options.encoding = 'UTF-8'
 

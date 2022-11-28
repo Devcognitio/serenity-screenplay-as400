@@ -38,3 +38,8 @@ jobs:
     
     - name: Unit Test Gradle  
       run: ./gradlew test jacocoTestReport
+      
+    - name: Build and analyze
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: ./gradlew sonarqube --info

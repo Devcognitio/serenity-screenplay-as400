@@ -1,7 +1,7 @@
-# serenity-screenplay-as400
+[![Java CI with Gradle](https://github.com/Devcognitio/serenity-screenplay-as400/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/Devcognitio/serenity-screenplay-as400/actions/workflows/pipeline.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=serenity-screenplay-as400&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=serenity-screenplay-as400)
 
-
-  <p align='center'>
+<p align='center'>
     <img src='https://user-images.githubusercontent.com/77740619/131050720-d5d4dcce-5f45-4616-812f-63b24bc02bfe.png'>
     <h3 align='center'>Devco</h3>
     <h3 align='center'>Screenplay AS400 Library</h3>
@@ -49,7 +49,7 @@
                                 '--> FOR_EACH_VALIDATION
 ```
 
->  :Note: By default, evidences will not be taken.
+>  Note: By default, evidences will not be taken.
 
 3. Screenshot format
 
@@ -58,7 +58,7 @@
                                '--> IMAGE
  ```
 
->  :Note: By default, the format will be IMAGE                     
+>  Note: By default, the format will be IMAGE                     
 
 
   ## How to use ⚙️

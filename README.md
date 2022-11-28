@@ -79,12 +79,12 @@
   
   * OpenScreen5250
   ```
-  OpenScreen5250.session(Session)
+  Open5250.session(Session)
   ```
   
   * OpenScreen3270
   ```
-  OpenScreen3270.session(Session)
+  Open3270.session(Session)
   ```
   
   > Note: For both terminals. This method needs an object of type Session which can be created as follows:

@@ -29,6 +29,14 @@
    * Java JDK 11
 
   ### Instalation 🔧
+  
+  * Add to your build.gradle the following line:
+  
+  ```
+  implementation group: 'co.com.devco', name: 'serenity-screenplay-as400', version: 'XXXXXXXX'
+  ```
+  
+  >  :warning: version should have the latest version available in maven central.
 
   * Serenity properties
 

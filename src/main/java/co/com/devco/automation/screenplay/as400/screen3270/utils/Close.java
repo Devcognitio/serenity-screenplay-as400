@@ -1,7 +1,7 @@
 package co.com.devco.automation.screenplay.as400.screen3270.utils;
 
 import co.com.devco.automation.screenplay.as400.screen3270.controllers.*;
-import jline.internal.Log;
+import org.jline.utils.Log;
 
 import java.util.concurrent.*;
 

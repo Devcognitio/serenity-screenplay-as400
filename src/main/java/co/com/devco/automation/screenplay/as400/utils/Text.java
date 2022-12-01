@@ -1,6 +1,6 @@
 package co.com.devco.automation.screenplay.as400.utils;
 
-import jline.internal.*;
+import org.jline.utils.Log;
 
 import javax.imageio.*;
 import java.awt.*;

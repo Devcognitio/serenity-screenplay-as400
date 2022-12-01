@@ -1,3 +1,5 @@
+import java.time.Duration
+
 plugins {
     id 'java'
     id 'java-library'
@@ -14,22 +16,22 @@ repositories {
 
 sourceCompatibility = JavaVersion.VERSION_11
 group 'co.com.devco'
-version '1.0.1'
+version '1.0.2'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
 dependencies {
-    implementation "net.serenity-bdd:serenity-cucumber:1.9.45"
-    implementation "net.serenity-bdd:serenity-screenplay:2.0.81"
+    implementation 'net.serenity-bdd:serenity-cucumber:3.4.3'
+    implementation 'net.serenity-bdd:serenity-screenplay:3.4.3'
     implementation "us.abstracta:xtn5250:2.2"
-    implementation 'com.blazemeter:dm3270-lib:0.14-lib'
-    implementation "jline:jline:2.11"
-    implementation 'org.assertj:assertj-core:3.10.0'
+    implementation 'com.blazemeter:dm3270-lib:0.15-lib'
+    implementation 'org.jline:jline:3.21.0'
+    implementation 'org.assertj:assertj-core:3.23.1'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'
-    testImplementation 'org.mockito:mockito-inline:4.6.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.8.0'
+    testImplementation 'org.mockito:mockito-inline:4.8.0'
 }
 
 jacoco {
@@ -133,7 +135,7 @@ nexusPublishing {
 
     transitionCheckOptions {
         maxRetries.set(40)
-        delayBetween.set(java.time.Duration.ofMillis(3000))
+        delayBetween.set(Duration.ofMillis(3000))
     }
 }
 

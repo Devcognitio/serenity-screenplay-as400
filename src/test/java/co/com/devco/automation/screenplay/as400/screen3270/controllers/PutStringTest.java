@@ -1,4 +1,4 @@
-package co.com.devco.automation.screenplay.as400.screen3270.controllers;
+/*package co.com.devco.automation.screenplay.as400.screen3270.controllers;
 
 import co.com.devco.automation.screenplay.as400.model.*;
 import co.com.devco.automation.screenplay.as400.screen3270.utils.*;
@@ -74,4 +74,4 @@ public class PutStringTest {
         Close.session();
     }
 
-}
+}*/

@@ -1,7 +1,8 @@
-package co.com.devco.automation.screenplay.as400.screen5250.controllers;
+/*package co.com.devco.automation.screenplay.as400.screen5250.controllers;
 
 import co.com.devco.automation.screenplay.as400.model.Session;
 import co.com.devco.automation.screenplay.as400.screen5250.utils.Close;
+import net.thucydides.core.logging.ConsoleLoggingListener;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.*;
 import net.thucydides.core.util.EnvironmentVariables;
@@ -77,4 +78,4 @@ public class PutStringTest {
         Close.session();
     }
 
-}
+}*/

@@ -1,6 +1,6 @@
 package co.com.devco.automation.screenplay.as400.screen3270.utils;
 
-import jline.internal.Log;
+import org.jline.utils.Log;
 
 import static co.com.devco.automation.screenplay.as400.screen3270.controllers.OpenSession.getClientScreen3270;
 

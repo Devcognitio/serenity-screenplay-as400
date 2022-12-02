@@ -16,7 +16,7 @@ public class OpenSession {
     public static void openSessionTn5250(Session session) {
 
             client = new TerminalClient();
-            client.setTerminalType("IBM-3179-2");
+            client.setTerminalType("IBM-3477-FC");
             client.setConnectionTimeoutMillis(0);
             if(session.isFlagSSL()) {
                     client.setSocketFactory(buildSSLContext().getSocketFactory());

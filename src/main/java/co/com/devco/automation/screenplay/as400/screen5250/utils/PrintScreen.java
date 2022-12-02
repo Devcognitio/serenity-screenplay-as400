@@ -1,7 +1,7 @@
 package co.com.devco.automation.screenplay.as400.screen5250.utils;
 
 import co.com.devco.automation.screenplay.as400.screen5250.controllers.OpenSession;
-import jline.internal.Log;
+import org.jline.utils.Log;
 
 public class PrintScreen {
 

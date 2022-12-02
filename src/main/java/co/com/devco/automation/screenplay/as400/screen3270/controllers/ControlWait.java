@@ -1,6 +1,6 @@
 package co.com.devco.automation.screenplay.as400.screen3270.controllers;
 
-import net.thucydides.core.util.*;
+import net.thucydides.core.environment.SystemEnvironmentVariables;
 
 import static co.com.devco.automation.screenplay.as400.screen3270.controllers.OpenSession.*;
 

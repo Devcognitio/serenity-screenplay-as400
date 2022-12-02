@@ -1,7 +1,7 @@
 package co.com.devco.automation.screenplay.as400.utils;
 
 import net.serenitybdd.core.Serenity;
-import net.thucydides.core.util.SystemEnvironmentVariables;
+import net.thucydides.core.environment.SystemEnvironmentVariables;
 
 import static co.com.devco.automation.screenplay.as400.screen5250.controllers.OpenSession.getClientScreen5250;
 
